@@ -1,0 +1,17 @@
+---
+
+- hosts: localhost
+  roles:
+  - role: standard-test-beakerlib
+    tags:
+    - classic
+    repositories:
+    - repo: "https://src.fedoraproject.org/tests/shell.git"
+      dest: "shell"
+      fmf_filter: "tier: 1, 2"
+    environment:
+      PACKAGES: zsh
+      SH_BIN: zsh
+    required_packages:
+    - expect            # login requires expect
+    - which             # smoke requires which
