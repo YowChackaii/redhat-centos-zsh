@@ -1,7 +1,7 @@
 Summary: Powerful interactive shell
 Name: zsh
 Version: 5.8
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: MIT
 URL: http://zsh.sourceforge.net/
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
@@ -19,6 +19,7 @@ BuildRequires: gcc
 BuildRequires: gdbm-devel
 BuildRequires: glibc-langpack-ja
 BuildRequires: libcap-devel
+BuildRequires: make
 BuildRequires: ncurses-devel
 BuildRequires: pcre-devel
 BuildRequires: sed
@@ -154,6 +155,9 @@ fi
 %doc Doc/*.html
 
 %changelog
+* Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 5.8-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 5.8-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
