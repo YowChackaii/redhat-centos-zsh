@@ -1,7 +1,7 @@
 Summary: Powerful interactive shell
 Name: zsh
 Version: 5.8
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: MIT
 URL: http://zsh.sourceforge.net/
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
@@ -11,6 +11,9 @@ Source3: zprofile.rhs
 Source4: zshrc.rhs
 Source5: zshenv.rhs
 Source6: dotzshrc
+
+# complete file arguments after rpmbuild -r/-b/-t
+Patch1:  0001-zsh-5.8-comp-rpm.patch
 
 BuildRequires: autoconf
 BuildRequires: coreutils
@@ -155,6 +158,9 @@ fi
 %doc Doc/*.html
 
 %changelog
+* Thu Mar 25 2021 Kamil Dudka <kdudka@redhat.com> - 5.8-5
+- complete file arguments after rpmbuild -r/-b/-t
+
 * Thu Jan 28 2021 Fedora Release Engineering <releng@fedoraproject.org> - 5.8-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 

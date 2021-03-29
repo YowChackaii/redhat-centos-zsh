@@ -1,0 +1,27 @@
+From d8ec07a4779f4675139c650979eb87dd6d7a5d92 Mon Sep 17 00:00:00 2001
+From: Daniel Shahaf <d.s@daniel.shahaf.name>
+Date: Tue, 18 Aug 2020 13:30:04 +0000
+Subject: [PATCH] 47323: _rpmbuild: Complete file arguments after -r/-b/-t.
+
+Upstream-commit: e14e899ab96c4171544a244ddc39991512ec41c8
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ Completion/Redhat/Command/_rpm | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Completion/Redhat/Command/_rpm b/Completion/Redhat/Command/_rpm
+index e346924..db7c114 100644
+--- a/Completion/Redhat/Command/_rpm
++++ b/Completion/Redhat/Command/_rpm
+@@ -282,7 +282,7 @@ _rpm () {
+     build_r) tmp=( '*:source package:_files -g "*.(#i)src.rpm(-.)"' ) ;|
+     build_t) tmp=( '*:tar file:_files -g "*.(#i)tar(.*|)(-.)"' ) ;|
+     build_?)
+-      _arguments -s -C $buildopts $commonopts $pathopts \
++      _arguments -s -C $buildopts $commonopts $pathopts "${tmp[@]}" \
+       ;;
+     checksig)
+       _arguments -s -C \!-K \
+-- 
+2.26.3
+
