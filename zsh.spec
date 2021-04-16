@@ -1,7 +1,7 @@
 Summary: Powerful interactive shell
 Name: zsh
 Version: 5.8
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: MIT
 URL: http://zsh.sourceforge.net/
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
@@ -158,6 +158,9 @@ fi
 %doc Doc/*.html
 
 %changelog
+* Fri Apr 16 2021 Mohan Boddu <mboddu@redhat.com> - 5.8-6
+- Rebuilt for RHEL 9 BETA on Apr 15th 2021. Related: rhbz#1947937
+
 * Thu Mar 25 2021 Kamil Dudka <kdudka@redhat.com> - 5.8-5
 - complete file arguments after rpmbuild -r/-b/-t
 
