@@ -1,7 +1,7 @@
 Summary: Powerful interactive shell
 Name: zsh
 Version: 5.8
-Release: 7%{?dist}
+Release: 8%{?dist}
 License: MIT
 URL: http://zsh.sourceforge.net/
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
@@ -158,6 +158,9 @@ fi
 %doc Doc/*.html
 
 %changelog
+* Thu Nov 25 2021 Debarshi Ray <rishi@fedoraproject.org> - 5.8-8
+- Overwrite PROMPT only if it's set to the built-in default (#2026749)
+
 * Tue Aug 10 2021 Mohan Boddu <mboddu@redhat.com> - 5.8-7
 - Rebuilt for IMA sigs, glibc 2.34, aarch64 flags
   Related: rhbz#1991688

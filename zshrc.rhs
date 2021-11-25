@@ -8,7 +8,7 @@
 #setenv() { export $1=$2 }  # csh compatibility
 
 # Set prompts
-PROMPT='[%n@%m]%~%# '    # default prompt
+[[ "$PROMPT" = "%m%# " ]] && PROMPT='[%n@%m]%~%# '    # default prompt
 #RPROMPT=' %~'     # prompt for right side of screen
 
 # bindkey -v             # vi key bindings
