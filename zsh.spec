@@ -1,7 +1,7 @@
 Summary: Powerful interactive shell
 Name: zsh
 Version: 5.8
-Release: 8%{?dist}
+Release: 9%{?dist}
 License: MIT
 URL: http://zsh.sourceforge.net/
 Source0: https://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
@@ -14,6 +14,9 @@ Source6: dotzshrc
 
 # complete file arguments after rpmbuild -r/-b/-t
 Patch1:  0001-zsh-5.8-comp-rpm.patch
+
+# do not perform PROMPT_SUBST evaluation on %F/%K arguments (CVE-2021-45444)
+Patch2:  0002-zsh-5.8-CVE-2021-45444.patch
 
 BuildRequires: autoconf
 BuildRequires: coreutils
@@ -158,6 +161,9 @@ fi
 %doc Doc/*.html
 
 %changelog
+* Tue Feb 22 2022 Kamil Dudka <kdudka@redhat.com> - 5.8-9
+- do not perform PROMPT_SUBST evaluation on %F/%K arguments (CVE-2021-45444)
+
 * Thu Nov 25 2021 Debarshi Ray <rishi@fedoraproject.org> - 5.8-8
 - Overwrite PROMPT only if it's set to the built-in default (#2026749)
 
